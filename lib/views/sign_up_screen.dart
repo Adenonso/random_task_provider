@@ -1,6 +1,7 @@
 // ignore_for_file: unused_local_variable
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:random_task_provider/components/colors.dart';
@@ -36,7 +37,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 5,
+              horizontal: 16,
             ),
             child: Column(
               spacing: 15,
@@ -50,20 +51,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
                     GestureDetector(
                         child: Icon(
                       Icons.arrow_back_rounded,
-                      color: Colors.green,
+                      color: AppColors.secondary,
                     )),
                     Spacer(),
                     Text(
                       "Have an account?",
-                      style: GoogleFonts.raleway(fontSize: 15),
+                      style: GoogleFonts.raleway(fontSize: 14),
                     ),
                     MyButtons(
-                      buttonWidth: 75,
-                      buttonHeight: 47,
+                      buttonWidth: 69,
+                      buttonHeight: 36,
                       buttonText: "Log in",
                       borderColor: AppColors.primary,
                       buttonTextstyle: GoogleFonts.raleway(
-                          fontSize: 15,
+                          fontSize: 14,
                           color: AppColors.primary,
                           fontWeight: FontWeight.w500),
                       onTap: () {
@@ -78,7 +79,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 Text(
                   "Create an account",
                   style: GoogleFonts.lora(
-                      fontSize: 23, fontWeight: FontWeight.bold),
+                      fontSize: 32, fontWeight: FontWeight.bold),
                 ),
                 buildSignUpItem(
                     text1: "Name",
@@ -123,62 +124,64 @@ class _SignUpScreenState extends State<SignUpScreen> {
                       color: AppColors.neutralLight,
                     ),
                     textController: TextEditingController()),
-                SizedBox(
-                  width: double.infinity,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      // Checkbox(value: true, onChanged: (value) {}),
-                      GestureDetector(
-                          onTap: () {
-                            setState(() {
-                              isChecked = !isChecked;
-                            });
-                          },
-                          child: Icon(
-                            isChecked
-                                ? Icons.check_box
-                                : Icons.check_box_outline_blank,
-                            color: isChecked
-                                ? AppColors.secondary
-                                : AppColors.neutralLight,
-                          )),
-
-                      Text(
-                        "Please accept Our ",
-                        style: GoogleFonts.lora(fontSize: 12),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    GestureDetector(
+                        onTap: () {
+                          setState(() {
+                            isChecked = !isChecked;
+                          });
+                        },
+                        child: Icon(
+                          isChecked
+                              ? Icons.check_box_rounded
+                              : Icons.check_box_outline_blank_rounded,
+                          color: isChecked
+                              ? AppColors.secondary
+                              : AppColors.neutralLight,
+                        )),
+                    RichText(
+                      text: TextSpan(
+                        children: [
+                          TextSpan(
+                            text: "Please accept our ",
+                            style: GoogleFonts.lora(
+                                fontSize: 12, color: Colors.black),
+                          ),
+                          TextSpan(
+                            text: "Terms and Conditions",
+                            style: GoogleFonts.lora(
+                                fontSize: 12,
+                                color: AppColors.primary,
+                                decoration: TextDecoration.underline),
+                          ),
+                          TextSpan(
+                            text: " before proceeding ",
+                            style: GoogleFonts.lora(
+                                fontSize: 12, color: Colors.black),
+                          ),
+                        ],
                       ),
-                      GestureDetector(
-                        onTap: () {},
-                        child: Text(
-                          "Terms and Condition",
-                          style: GoogleFonts.lora(
-                              fontSize: 12,
-                              decoration: TextDecoration.underline),
-                        ),
-                      ),
-                      Text(
-                        " Before Proceeding",
-                        style: GoogleFonts.lora(fontSize: 12),
-                      )
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                    height: 50,
+                    height: 56,
                     width: double.infinity,
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                     decoration: BoxDecoration(
                         color: isChecked
                             ? AppColors.secondary
                             : AppColors.neutralLight,
-                        borderRadius: BorderRadius.circular(8)),
+                        borderRadius: BorderRadius.circular(16)),
                     child: Center(
                       child: Text(
                         "Sign up",
                         style: GoogleFonts.raleway(
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: AppColors.background),
                       ),
@@ -188,7 +191,7 @@ class _SignUpScreenState extends State<SignUpScreen> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                      height: 50,
+                      height: 58,
                       width: double.infinity,
                       decoration: BoxDecoration(
                           color: AppColors.transparent,
@@ -199,15 +202,11 @@ class _SignUpScreenState extends State<SignUpScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         spacing: 15,
                         children: [
-                          CircleAvatar(
-                              radius: 17,
-                              backgroundColor: AppColors.transparent,
-                              backgroundImage:
-                                  AssetImage("assets/images/google logo.png")),
+                          SvgPicture.asset('assets/images/googleLogosvg.svg'),
                           Text(
                             "Sign up with Google",
                             style: GoogleFonts.raleway(
-                                fontSize: 15,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.black),
                           ),
@@ -239,15 +238,20 @@ class _SignUpScreenState extends State<SignUpScreen> {
         //
         Text(
           text1,
-          style:
-              GoogleFonts.raleway(fontSize: 15.0, fontWeight: FontWeight.w600),
+          style: GoogleFonts.raleway(
+              fontSize: 15.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey.shade700),
         ),
         TextField(
           controller: textController,
           obscureText: obscureText ?? false,
           decoration: InputDecoration(
             hintText: text2,
-            hintStyle: GoogleFonts.raleway(fontSize: 14), //raleway font
+            hintStyle: GoogleFonts.raleway(
+                fontSize: 14,
+                color: Colors.grey.shade500,
+                fontWeight: FontWeight.w500), //raleway font
             suffixIcon: sufIcon,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),

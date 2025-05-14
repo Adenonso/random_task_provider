@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:random_task_provider/components/colors.dart';
 import 'package:random_task_provider/components/my_buttons.dart';
@@ -19,7 +20,7 @@ class _LoginScreenState extends State<LoginScreen> {
         child: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.symmetric(
-              horizontal: 5,
+              horizontal: 16,
             ),
             child: Column(
               spacing: 15,
@@ -41,19 +42,17 @@ class _LoginScreenState extends State<LoginScreen> {
                     Spacer(),
                     Text(
                       "Don't have an account?",
-                      style: GoogleFonts.raleway(fontSize: 15),
+                      style: GoogleFonts.raleway(fontSize: 14),
                     ),
-                    GestureDetector(
-                      child: MyButtons(
-                        buttonWidth: 75,
-                        buttonHeight: 47,
-                        buttonText: "Sign up",
-                        borderColor: AppColors.primary,
-                        buttonTextstyle: GoogleFonts.raleway(
-                            fontSize: 15,
-                            color: AppColors.primary,
-                            fontWeight: FontWeight.w500),
-                      ),
+                    MyButtons(
+                      buttonWidth: 69,
+                      buttonHeight: 36,
+                      buttonText: "Sign up",
+                      borderColor: AppColors.primary,
+                      buttonTextstyle: GoogleFonts.raleway(
+                          fontSize: 14,
+                          color: AppColors.primary,
+                          fontWeight: FontWeight.w500),
                     )
                   ],
                 ),
@@ -96,16 +95,17 @@ class _LoginScreenState extends State<LoginScreen> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                    height: 50,
+                    height: 56,
                     width: double.infinity,
+                    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
                     decoration: BoxDecoration(
                         color: Colors.green,
-                        borderRadius: BorderRadius.circular(8)),
+                        borderRadius: BorderRadius.circular(16)),
                     child: Center(
                       child: Text(
                         "Log in",
                         style: GoogleFonts.raleway(
-                            fontSize: 15,
+                            fontSize: 18,
                             fontWeight: FontWeight.w500,
                             color: AppColors.background),
                       ),
@@ -115,7 +115,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 GestureDetector(
                   onTap: () {},
                   child: Container(
-                      height: 50,
+                      height: 58,
                       width: double.infinity,
                       decoration: BoxDecoration(
                           color: AppColors.transparent,
@@ -126,15 +126,11 @@ class _LoginScreenState extends State<LoginScreen> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         spacing: 15,
                         children: [
-                          CircleAvatar(
-                              radius: 17,
-                              backgroundColor: AppColors.transparent,
-                              backgroundImage:
-                                  AssetImage("assets/images/google logo.png")),
+                          SvgPicture.asset('assets/images/googleLogosvg.svg'),
                           Text(
                             "Sign up with Google",
                             style: GoogleFonts.raleway(
-                                fontSize: 15,
+                                fontSize: 18,
                                 fontWeight: FontWeight.w500,
                                 color: AppColors.black),
                           ),
@@ -165,8 +161,10 @@ class _LoginScreenState extends State<LoginScreen> {
         //
         Text(
           text1,
-          style:
-              GoogleFonts.raleway(fontSize: 15.0, fontWeight: FontWeight.w600),
+          style: GoogleFonts.raleway(
+              fontSize: 15.0,
+              fontWeight: FontWeight.w500,
+              color: Colors.grey.shade700),
         ),
         TextField(
           controller: textController,
@@ -184,7 +182,7 @@ class _LoginScreenState extends State<LoginScreen> {
             focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(8),
               borderSide: BorderSide(
-                  color: AppColors.primary,
+                  color: AppColors.secondary,
                   width: 2), // Red border when focused
             ),
             border: OutlineInputBorder(
