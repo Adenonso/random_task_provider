@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:provider/provider.dart';
-import 'package:random_task_provider/view_models/auth_view_model.dart';
-import 'package:random_task_provider/views/sign_up_screen.dart';
+import 'package:random_task_provider/presentation/viewmodels/auth_view_model.dart';
+import 'package:random_task_provider/presentation/views/sign_up_screen.dart';
 
 void main() {
   runApp(MultiProvider(providers: [
@@ -19,10 +20,16 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       color: Colors.white,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        appBarTheme: const AppBarTheme(
+          elevation: 0,
+          scrolledUnderElevation: 0,
+          backgroundColor: Colors.white,
+          systemOverlayStyle: SystemUiOverlayStyle.dark,
+        ),
         useMaterial3: true,
+        scaffoldBackgroundColor: Colors.white,
       ),
-      home: const SignUpScreen(),
+      home: SignUpScreen(),
     );
   }
 }
