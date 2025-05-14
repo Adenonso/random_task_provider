@@ -2,9 +2,6 @@
 
 import 'package:flutter/material.dart';
 import 'package:random_task_provider/presentation/views/home.dart';
-// import 'package:random_task_provider/data/models/user_model.dart'; // Keep if UserModel is used
-// import 'package:get/get.dart'; // If using Get for navigation
-// import 'package:random_task_provider/routes/app_routes.dart'; // If you have AppRoutes
 
 class AuthViewModel extends ChangeNotifier {
   // Text Editing Controllers

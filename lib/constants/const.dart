@@ -44,8 +44,3 @@ const String PHONE_NUMBER_LENGTH_ERROR = 'Phone number must be 11 digits';
 const String INVALID_PHONE_NUMBER_FIELD =
     "Number provided isn't valid.Try another phone number";
 
-const String CURRENCY = "NGN";
-const String CURRENCY_SYMBOL = "₦";
-const String IMAGE1 = "https://www.health.com/thmb/gk-quuSpsdzEm8Mca0FvwaA5_UE=/750x0/filters:no_upscale():max_bytes(150000):strip_icc():format(webp)/hlt-tier-3-primary-best-hair-growth-shampoo-ahuang-1478-d48ed73e1b404d0ebfae4146f2dd5d65.jpeg";
-const String IMAGE2 = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTfZ-vhKGzzdglXpXdOoA-WHR6tlkB2g7KVQ&s";
-const String IMAGE3 = "https://via.placeholder.com/150";

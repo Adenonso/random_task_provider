@@ -97,9 +97,6 @@ class _PhoneTextInputFormState extends State<PhoneTextInputForm> {
               initialCountryCode: initialCountryCode,
               initialValue: initialPhoneNumber,
               showCountryFlag: false,
-              // countries: countries
-              //     .where((c) => ['NG', 'GB'].contains(c.code))
-              //     .toList(),
               decoration: InputDecoration(
                 counterText: '',
                 filled: true,

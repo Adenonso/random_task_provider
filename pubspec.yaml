@@ -29,3 +29,13 @@ flutter:
   assets:
     - assets/images/
     - assets/svg/
+
+  fonts:
+    - family: Lora
+      fonts:
+        - asset: assets/font/Lora-SemiBold.ttf
+          weight: 500
+    - family: Raleway
+      fonts:
+        - asset: assets/font/Raleway-Medium.ttf
+        - asset: assets/font/Raleway-SemiBold.ttf
