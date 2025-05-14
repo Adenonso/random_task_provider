@@ -5,6 +5,7 @@ class AuthViewModel extends ChangeNotifier {
   String? _name;
   String? _email;
   String? _phoneNumber;
+  // ignore: unused_field
   String? _password;
 
   bool _isLoading = false;
@@ -44,6 +45,7 @@ class AuthViewModel extends ChangeNotifier {
     await Future.delayed(Duration(seconds: 2));
 
     //save the data
+    // ignore: unused_local_variable
     UserModel user =
         UserModel(name: _name!, email: _email!, phoneNumber: _phoneNumber!);
 
